@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/title_public" />
+
+    <com.qfdqc.views.pulltoloadmoreview.utils.PullUpToLoadMore
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_below="@+id/top"
+        android:id="@+id/ptlm"
+        android:orientation="vertical">
+
+        <com.qfdqc.views.pulltoloadmoreview.utils.MyScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <include layout="@layout/include_top"></include>
+
+        </com.qfdqc.views.pulltoloadmoreview.utils.MyScrollView>
+
+        <com.qfdqc.views.pulltoloadmoreview.utils.MyScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <include layout="@layout/include_bottom"></include>
+
+            </LinearLayout>
+
+        </com.qfdqc.views.pulltoloadmoreview.utils.MyScrollView>
+
+    </com.qfdqc.views.pulltoloadmoreview.utils.PullUpToLoadMore>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_100"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/px_100"
+            android:layout_weight="1"
+            android:background="@color/color_white"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/good_collection_llyt"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/not_collect_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableTop="@mipmap/icon_collect_not"
+                    android:gravity="center"
+                    android:padding="@dimen/px_10"
+                    android:text="收  藏"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/px_24" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="@dimen/px_1"
+                android:layout_height="match_parent"
+                android:background="@color/color_e0e0e0"></TextView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableTop="@mipmap/good_icon_service"
+                    android:gravity="center"
+                    android:padding="@dimen/px_10"
+                    android:text="联系客服"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/px_24" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/add_shop_car_llyt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_FF6F06"
+                android:gravity="center"
+                android:text="加入购物车"
+                android:textColor="#FFF"
+                android:textSize="@dimen/px_32" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/buy_immediately_bt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ff0000"
+                android:gravity="center"
+                android:text="立即购买"
+                android:textColor="#FFF"
+                android:textSize="@dimen/px_32" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
