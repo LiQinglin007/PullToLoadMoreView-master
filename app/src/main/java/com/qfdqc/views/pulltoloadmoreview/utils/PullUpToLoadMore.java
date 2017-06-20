@@ -22,6 +22,7 @@ public class PullUpToLoadMore extends ViewGroup {
     int currPosition = 0;
     int position1Y;
     int lastY;
+    int lastX;
     public int scaledTouchSlop;//最小滑动距离
     int speed = 200;
     boolean isIntercept;
@@ -113,10 +114,12 @@ public class PullUpToLoadMore extends ViewGroup {
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         int y = (int) ev.getY();
+        int x = (int) ev.getX();
 
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 lastY = y;
+                lastX = x;
                 break;
             case MotionEvent.ACTION_MOVE:
 
@@ -128,6 +131,7 @@ public class PullUpToLoadMore extends ViewGroup {
                         if (dy >= scaledTouchSlop) {
                             isIntercept = true;//拦截事件
                             lastY=y;
+                            lastX=x;
                         }
                     }
                 }
@@ -144,13 +148,27 @@ public class PullUpToLoadMore extends ViewGroup {
                     }
 
                 }else{
-                    int dy = lastY - y;
+                    int dy = lastY - y;//上下滑动的距离
+                    int dx = lastX - x;//左右滑动的距离
+
                     //判断是否是向上滑动和是否在第二屏   如果是在刚到第二屏的时候，向上滑动，也让父控件获取焦点
 //                    在onInterceptTouchEvent（）方法中，如果返回true，父控件拦截事件，如果返回false，则向下传递
                     if (dy < 0 && currPosition == 1) {
                         if (Math.abs(dy) >= scaledTouchSlop) {
                             if(PublicStaticClass.IsTop){//如果viewpager里边的scrollview在最顶部，，就让外边的scrollview获取焦点，否则，让最里边的scrollview获取焦点
-                                isIntercept = true;
+
+                                //这里加一个判断，如果左右滑动的距离小于上下滑动的距离，我们认为用户在上下滑动
+                                 //如果左右滑动的距离大于上下滑动的距离，我们认为用户在左右滑动
+                                //上下滑动时，让父控件拦截事件
+                                //左右滑动时，让子控件拦截事件
+
+
+                                if(Math.abs(dy)>Math.abs(dx)){//上下滑动
+                                    isIntercept = true;
+                                }else{//左右滑动
+                                    isIntercept = false;
+                                }
+
                             }
                         }
                     }
@@ -163,6 +181,7 @@ public class PullUpToLoadMore extends ViewGroup {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         int y = (int) event.getY();
+        int x = (int) event.getX();
         velocityTracker.addMovement(event);
 
         switch (event.getAction()) {
@@ -201,6 +220,7 @@ public class PullUpToLoadMore extends ViewGroup {
                 break;
         }
         lastY = y;
+        lastX = x;
         return true;
     }
 
