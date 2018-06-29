@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:gravity="center"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:scaleType="fitXY"
-        android:src="@drawable/a1" />
+        android:src="@drawable/a1"
+        android:visibility="gone" />
+
+
+    <com.bigkoo.convenientbanner.ConvenientBanner
+        android:id="@+id/banner_convenient"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:canLoop="true" />
 
     <TextView
         android:layout_width="match_parent"
@@ -38,35 +47,35 @@
         android:text="图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文图文详情奥图文详情奥图文详情奥图文详情奥图文"></TextView>
 
 
-<LinearLayout
-    android:orientation="horizontal"
-    android:paddingTop="@dimen/px_20"
-    android:paddingBottom="@dimen/px_20"
-    android:gravity="center"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/px_20"
+        android:paddingTop="@dimen/px_20">
 
 
-    <View
-        android:background="@color/color_e0e0e0"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="@dimen/px_2"></View>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/px_2"
+            android:layout_weight="1"
+            android:background="@color/color_e0e0e0"></View>
 
-    <TextView
-        android:text="继续拖动，查看图文详情"
-        android:paddingLeft="@dimen/px_10"
-        android:paddingRight="@dimen/px_10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/px_10"
+            android:paddingRight="@dimen/px_10"
+            android:text="继续拖动，查看图文详情" />
 
-    <View
-        android:background="@color/color_e0e0e0"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="@dimen/px_2"></View>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/px_2"
+            android:layout_weight="1"
+            android:background="@color/color_e0e0e0"></View>
 
-</LinearLayout>
+    </LinearLayout>
 
 
 </LinearLayout>
