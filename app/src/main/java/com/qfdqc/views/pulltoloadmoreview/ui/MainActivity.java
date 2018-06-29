@@ -64,12 +64,8 @@ public class MainActivity extends AppCompatActivity {
         //初始化各fragment
         mOneFragment = new OneFragment();
         mTwoFragment = new TwoFragment();
-
-        //将fragment装进列表中
-
         list_fragment.add(mOneFragment);
         list_fragment.add(mTwoFragment);
-
         list_title.add("第一个页面");
         list_title.add("第二个页面");
 
