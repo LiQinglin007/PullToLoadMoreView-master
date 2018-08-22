@@ -28,7 +28,7 @@ public class PullUpToLoadMore extends ViewGroup {
     boolean isIntercept;
 
     public boolean bottomScrollVIewIsInTop = false;
-    public boolean topScrollViewIsBottom = false;
+    public boolean topScrollViewIsBottom = true;
 
     public PullUpToLoadMore(Context context) {
         super(context);

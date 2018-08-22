@@ -17,10 +17,11 @@
     <com.bigkoo.convenientbanner.ConvenientBanner
         android:id="@+id/banner_convenient"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="match_parent"
         app:canLoop="true" />
 
     <TextView
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -30,6 +31,7 @@
         android:textSize="18dp" />
 
     <TextView
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -39,6 +41,7 @@
         android:textSize="18dp" />
 
     <TextView
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
