@@ -18,10 +18,10 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Fragment> list_fragment = new ArrayList<>();                                //定义要装fragment的列表
-    private ArrayList<String> list_title = new ArrayList<>();                                //定义要装fragment的列表
-    private OneFragment mOneFragment;              //热门推荐fragment
-    private TwoFragment mTwoFragment;            //热门收藏fragment
+    private ArrayList<Fragment> list_fragment = new ArrayList<>();
+    private ArrayList<String> list_title = new ArrayList<>();
+    private OneFragment mOneFragment;
+    private TwoFragment mTwoFragment;
 
 
     private SimpleFragmentPagerAdapter pagerAdapter;
@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         pagerAdapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager(), this, list_fragment, list_title);
-//        viewPager = (ChildViewPager) findViewById(R.id.viewpager);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(pagerAdapter);
         tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);

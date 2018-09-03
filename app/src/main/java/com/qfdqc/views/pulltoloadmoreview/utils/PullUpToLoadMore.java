@@ -30,6 +30,11 @@ public class PullUpToLoadMore extends ViewGroup {
     public boolean bottomScrollVIewIsInTop = false;
     public boolean topScrollViewIsBottom = true;
 
+    /**
+     * 底部控件是否滑动到了最顶部
+     */
+    public static boolean isTop=false;
+
     public PullUpToLoadMore(Context context) {
         super(context);
         init();
@@ -141,7 +146,7 @@ public class PullUpToLoadMore extends ViewGroup {
                     //判断是否是向下滑动和是否在第二屏
                     if (dy < 0 && currPosition == 1) {
                         if (Math.abs(dy) >= scaledTouchSlop) {
-                            if(PublicStaticClass.IsTop){//如果viewpager里边的scrollview在最顶部，，就让外边的scrollview获取焦点，否则，让最里边的scrollview获取焦点
+                            if(PullUpToLoadMore.isTop){//如果viewpager里边的scrollview在最顶部，，就让外边的scrollview获取焦点，否则，让最里边的scrollview获取焦点
                                 isIntercept = true;
                             }
                         }
@@ -155,7 +160,7 @@ public class PullUpToLoadMore extends ViewGroup {
 //                    在onInterceptTouchEvent（）方法中，如果返回true，父控件拦截事件，如果返回false，则向下传递
                     if (dy < 0 && currPosition == 1) {
                         if (Math.abs(dy) >= scaledTouchSlop) {
-                            if(PublicStaticClass.IsTop){//如果viewpager里边的scrollview在最顶部，，就让外边的scrollview获取焦点，否则，让最里边的scrollview获取焦点
+                            if(PullUpToLoadMore.isTop){//如果viewpager里边的scrollview在最顶部，，就让外边的scrollview获取焦点，否则，让最里边的scrollview获取焦点
 
                                 //这里加一个判断，如果左右滑动的距离小于上下滑动的距离，我们认为用户在上下滑动
                                  //如果左右滑动的距离大于上下滑动的距离，我们认为用户在左右滑动

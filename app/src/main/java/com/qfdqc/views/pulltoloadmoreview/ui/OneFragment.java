@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import com.qfdqc.views.pulltoloadmoreview.R;
 import com.qfdqc.views.pulltoloadmoreview.utils.MyScrollView;
-import com.qfdqc.views.pulltoloadmoreview.utils.PublicStaticClass;
+import com.qfdqc.views.pulltoloadmoreview.utils.PullUpToLoadMore;
 
 public class OneFragment extends Fragment {
     View mView;
@@ -38,9 +38,9 @@ public class OneFragment extends Fragment {
             @Override
             public void onScroll(int scrollY) {
                 if (scrollY == 0) {
-                    PublicStaticClass.IsTop = true;
+                    PullUpToLoadMore.isTop= true;
                 } else {
-                    PublicStaticClass.IsTop = false;
+                    PullUpToLoadMore.isTop= false;
                 }
             }
 
