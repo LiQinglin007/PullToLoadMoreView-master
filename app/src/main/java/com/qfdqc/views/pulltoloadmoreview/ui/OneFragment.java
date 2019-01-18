@@ -23,7 +23,7 @@ public class OneFragment extends Fragment {
     }
 
     private void initView() {
-        MyScrollView oneScrollView= (MyScrollView) mView.findViewById(R.id.oneScrollview);
+        MyScrollView oneScrollView = (MyScrollView) mView.findViewById(R.id.oneScrollview);
         oneScrollView.setScrollListener(new MyScrollView.ScrollListener() {
             @Override
             public void onScrollToBottom() {
@@ -38,9 +38,9 @@ public class OneFragment extends Fragment {
             @Override
             public void onScroll(int scrollY) {
                 if (scrollY == 0) {
-                    PullUpToLoadMore.isTop= true;
+                    PullUpToLoadMore.bottomChildViewIsTop = true;
                 } else {
-                    PullUpToLoadMore.isTop= false;
+                    PullUpToLoadMore.bottomChildViewIsTop = false;
                 }
             }
 
@@ -48,7 +48,6 @@ public class OneFragment extends Fragment {
             public void notBottom() {
 
             }
-
         });
     }
 }

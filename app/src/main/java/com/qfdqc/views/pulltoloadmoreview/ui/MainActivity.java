@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-
         initControls();
     }
 
@@ -57,9 +56,9 @@ public class MainActivity extends AppCompatActivity {
                 return new NetworkImageHolderView();
             }
         }, networkImages);
-        mBanner.setPointViewVisible(false);//是否显示小圆点
+        //是否显示小圆点
+        mBanner.setPointViewVisible(false);
         mBanner.startTurning(2000);
-
 
         //初始化各fragment
         mOneFragment = new OneFragment();
@@ -69,29 +68,11 @@ public class MainActivity extends AppCompatActivity {
         list_title.add("第一个页面");
         list_title.add("第二个页面");
 
-
-        pagerAdapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager(), this, list_fragment, list_title);
+        pagerAdapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager(), list_fragment, list_title);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(pagerAdapter);
         tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
-        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-
     }
 }

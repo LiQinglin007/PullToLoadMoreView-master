@@ -1,6 +1,4 @@
 package com.qfdqc.views.pulltoloadmoreview.adapter;
-
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -12,14 +10,10 @@ import java.util.ArrayList;
  */
 
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
-
     private ArrayList<Fragment> mList;
     private ArrayList<String> mListString;
-    private Context context;
-
-    public SimpleFragmentPagerAdapter(FragmentManager fm, Context context, ArrayList<Fragment>  mList, ArrayList<String> mListString) {
+    public SimpleFragmentPagerAdapter(FragmentManager fm, ArrayList<Fragment> mList, ArrayList<String> mListString) {
         super(fm);
-        this.context = context;
         this.mList = mList;
         this.mListString = mListString;
     }

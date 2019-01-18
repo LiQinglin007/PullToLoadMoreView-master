@@ -1,11 +1,9 @@
 package com.qfdqc.views.pulltoloadmoreview.ui;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,41 +51,12 @@ public class TwoFragment extends Fragment {
                 int firstVisibleItemPosition = ((LinearLayoutManager) layoutManager)
                         .findFirstVisibleItemPosition();
                 if (firstVisibleItemPosition == 0) {
-                    PullUpToLoadMore.isTop = true;
+                    PullUpToLoadMore.bottomChildViewIsTop = true;
                 } else {
-                    PullUpToLoadMore.isTop = false;
+                    PullUpToLoadMore.bottomChildViewIsTop = false;
                 }
             }
         });
-
-
-//        MyScrollView twoScrollView = (MyScrollView) mView.findViewById(R.id.twoScrollview);
-//        twoScrollView.setScrollListener(new MyScrollView.ScrollListener() {
-//            @Override
-//            public void onScrollToBottom() {
-//
-//            }
-//
-//            @Override
-//            public void onScrollToTop() {
-//
-//            }
-//
-//            @Override
-//            public void onScroll(int scrollY) {
-//                if (scrollY == 0) {
-//                    PullUpToLoadMore.isTop  = true;
-//                } else {
-//                    PullUpToLoadMore.isTop  = false;
-//                }
-//            }
-//
-//            @Override
-//            public void notBottom() {
-//
-//            }
-//
-//        });
     }
 
 }
